@@ -1,0 +1,84 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;    
+}
+h1{
+    font-size: 50px;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#cell{
+    border: 3px double rgb(35, 195, 11);
+    cursor: pointer;
+    color: yellow;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 0 3px;
+    font-size: 70px;
+
+}
+
+#cellContainer{
+justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 225px;
+    margin: auto;
+}
+
+#gameContainer{
+    font-family: cursive;
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin: auto;
+}
+
+#gameStatus{
+    font-size: 30px;
+}
+
+/* .hide{
+    display: none;
+} */
+
+h4{
+    color: aliceblue;
+    text-align: justify;
+}
+
+#restart{
+    border: 5px  rgba(207, 243, 102, 0.991);
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: inset;
+    margin-top: 15px;
+    color: whitesmoke;    ;
+    cursor: pointer;
+    padding: 8px;
+    margin-bottom: 20%;
+}
+
+#player{
+    color: rgb(251, 200, 200);
+    /* margin-left: -70%; */
+    margin-top: 3%;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+}
+input{
+    padding: 6px;
+    border: solid rgb(168, 158, 160);
+    margin-top: 10px;
+    color: rgb(244, 189, 189);
+    font-size: large;
+}
+form{
+    border: solid rgb(35, 34, 34);
+    width: 50vw;
+    height: 100px;
+}
