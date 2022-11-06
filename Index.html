@@ -8,48 +8,66 @@
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
+    <!-- <script src="./player.js"></script> -->
 </head>
 
 <body>
 
-    <section id="gameContainer">
+    <div id='welcome-image' class="" onclick="welcomePage()"></div>
+
+    <div id="player" class="">
+
+        <div id="form">
+            <p>Please enter players name</p>
+            <label for="Player-Name"> Player 1: </label>
+            <input type="text" required class="p1">
+            <br>
+            <label for="Second-Player-Name">Player 2: </label>
+            <input type="text" required class="p2">
+            <br>
+            <button id="Enter" onclick="inputValue()">Enter</button>
+        </div>
+    </div>
+
+    </div>
+    <section id="gameContainer" class="hide">
 
         <h1>TIC-TAC-TOE</h1>
 
+        <h3 id="name-display" class=""></h3>
+        <!-- <div id="name-display" class="hide">
+            <h4 id="name1"> Player 1: </h4>
+
+            <h4 id="name2" > Player 2: </h4>
+        </div> -->
+
         <div id="cellContainer">
 
-            <div id="cell" cell="0"></div>
-            <div id="cell" cell="1"></div>
-            <div id="cell" cell="2"></div>
-            <div id="cell" cell="3"></div>
-            <div id="cell" cell="4"></div>
-            <div id="cell" cell="5"></div>
-            <div id="cell" cell="6"></div>
-            <div id="cell" cell="7"></div>
-            <div id="cell" cell="8"></div>
+            <div id="cell" class="cell0" cell="0"></div>
+            <div id="cell" class="cell1" cell="1"></div>
+            <div id="cell" class="cell2" cell="2"></div>
+            <div id="cell" class="cell3" cell="3"></div>
+            <div id="cell" class="cell4" cell="4"></div>
+            <div id="cell" class="cell5" cell="5"></div>
+            <div id="cell" class="cell6" cell="6"></div>
+            <div id="cell" class="cell7" cell="7"></div>
+            <div id="cell" class="cell8" cell="8"></div>
 
         </div>
-        <!-- <div>
-            <h4 id="name1" class="hide"> Player 1: </h4>
-            <h4 id="name2" class="hide"> Player 2: </h4>
 
-        </div> -->
+        <!-- id="squid"><img src="./edited/squid-sad.png" alt=""></div> -->
+        <!-- id="spongebob"><img src="./edited/spongebob-x.png" alt=""></div> -->
+        <!-- <div id="spongebob-winning"> <img src="./edited/sponge-happy.png" alt=""> </div> -->
 
-        <!-- <div id="player">
-            <p>Enter User Name</p>
-            <form>
-                <label for="Player-Name"> Player 1: </label> 
-                    <input type="text" class="p1">
-                
-              <label for="Second-Player-Name">Player 2: </label>
-                    <input type="text" class="p2">
-               <button style="color: white;" onclick="inputValue()">Enter</button>
-            </form>
+        <div id="spongeBob" style="display: none;"> <img src="./edited/spongebob-x.png" alt=""> </div>
 
-        </div> -->
+        <div id="squid" style="display: none;"> <img src="./edited/squid-sad.png" alt=""></div>
+
+        <!-- <div id="squid-winning"> <img src="./edited/final-squid-win.png" alt=""></div> -->
 
         <div id="gameStatus" class=""></div>
         <button id="restart">Restart</button>
+        <button id="try-again">Try Again</button>
 
     </section>
 

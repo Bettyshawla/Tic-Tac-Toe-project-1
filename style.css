@@ -1,36 +1,41 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
-    background-color: black;    
+    background-color: #e1e3f7;
 }
-h1{
+
+h1 {
     font-size: 50px;
-    color: whitesmoke;
+    color: white;
     display: flex;
     justify-content: center;
     margin: auto;
+   
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: black;
 }
 
-#cell{
-    border: 3px double rgb(35, 195, 11);
+#cell {
+    border: 3px double rgb(41, 41, 41);
     cursor: pointer;
-    color: yellow;
-    width: 150px;
-    height: 150px;
+    color: black;
+    width: 200px;
+    height: 180px;
     box-shadow: 0 0 0 3px;
     font-size: 70px;
 
 }
 
-#cellContainer{
-justify-content: center;
+#cellContainer {
+    justify-content: center;
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 225px;
+    width: 200px;
     margin: auto;
 }
 
-#gameContainer{
+#gameContainer {
     font-family: cursive;
     text-align: center;
     justify-content: center;
@@ -38,47 +43,115 @@ justify-content: center;
     margin: auto;
 }
 
-#gameStatus{
+#gameStatus {
     font-size: 30px;
 }
 
-/* .hide{
+.hide {
     display: none;
-} */
+    font-size: larger;
+    margin-left: 30px;
+}
 
-h4{
+h4 {
     color: aliceblue;
     text-align: justify;
 }
 
-#restart{
-    border: 5px  rgba(207, 243, 102, 0.991);
+#restart {
+    border: 5px rgb(41, 41, 41);
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
     border-style: inset;
     margin-top: 15px;
-    color: whitesmoke;    ;
+    color: rgb(12, 12, 12);
     cursor: pointer;
     padding: 8px;
-    margin-bottom: 20%;
+    margin-bottom: 5%;
 }
 
-#player{
-    color: rgb(251, 200, 200);
-    /* margin-left: -70%; */
-    margin-top: 3%;
+#try-again {
+    border: 5px rgb(41, 41, 41);
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: outset;
+    margin-top: 15px;
+    color: rgb(12, 12, 12);
+    cursor: pointer;
+    padding: 8px;
+    margin-bottom: 5%;
+}
+
+#player {
+    
+    color: black;
     font-size: 1.5em;
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+  
 }
-input{
+
+p {
+    text-decoration: underline;
+    margin-bottom: 20px;
+
+}
+
+input {
     padding: 6px;
-    border: solid rgb(168, 158, 160);
+    border: solid black;
     margin-top: 10px;
-    color: rgb(244, 189, 189);
+    color: blackrgb(244, 189, 189);
     font-size: large;
+   
 }
-form{
-    border: solid rgb(35, 34, 34);
-    width: 50vw;
-    height: 100px;
+
+#form {
+   
+    width: 30vw;
+    height: 25vh;
+    /* display: none; */
+}
+
+#name-display{
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* #squid{
+    width: 10in;
+    height: 5in;
+}
+#squid-winnig{
+width: 120%;
+height: 100%;
+/* }
+#spongebob-winning{
+    width: 10%;
+    height: 10%;
+    /* display: none; */
+/*  */
+/* #spongebob{ */
+
+/* } */
+#welcome-image {
+    background-image: url(./edited/f1.jpg);
+    width: 150vw;
+    height: 100vh;
+    cursor: pointer;
+}
+
+#Enter{
+    border: 3px black;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-style: inset;
+    margin-top: 6px;
+    margin-left: 100px;
+    color: blackwhitesmoke;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 20%;
 }
