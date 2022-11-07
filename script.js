@@ -5,7 +5,7 @@ const cellContainer = document.querySelector("#cellContainer");
 // Cell box
 let cells = document.querySelectorAll("#cell");
 // Status of the game
-let gameStatus = document.getElementById("#gameStatus");
+let gameStatus = document.getElementById("gameStatus");
 // Restart Button
 const restartButton = document.getElementById("restart");
 // Try again Button
@@ -21,19 +21,21 @@ const player1 = document.querySelector(".p1"); //input for player 1
 const player2 = document.querySelector(".p2"); //input for player 2
 // name display
 const nameDisplay = document.getElementById("name-display")
-
+//  Welcome Page
 let welcome = document.getElementById('welcome-image')
-//class for each
-// const cell0 = document.getElementsByClassName("cell0")
-// const cell1 = document.getElementsByClassName("cell1")
-// const cell2 = document.getElementsByClassName("cell2")
-// const cell3 = document.getElementsByClassName("cell3")
-// const cell4 = document.getElementsByClassName("cell4")
-// const cell5 = document.getElementsByClassName("cell5")
-// const cell6 = document.getElementsByClassName("cell6")
-// const cell7 = document.getElementsByClassName("cell7")
-// const cell8 = document.getElementsByClassName("cell8")
+// Setting the game 
+let gameOver = false
 
+//status
+const winMessage = document.getElementById("win-draw")
+// win-image
+const winImage = document.getElementById('win-pic')
+// tie-pic
+const tieImage = document.getElementById('tie')
+
+//score
+let firstPlayerScore = document.getElementById("score1")
+let secondPlayerScore = document.getElementById("score2")
 
 //Winning condition is only when this are met
 const win = [
@@ -53,16 +55,17 @@ let options = ["", "", "", "", "", "", "", "", ""];
 
 // Players
 class Player {
-    constructor(name, value, active) {
+    constructor(name, value, active, score) {
         this.name = name;
         this.value = value;
         this.active = active;
+        this.score = score;
     }
 }
 
+const firstPlayer = new Player(player1.value, "X", true, 0)
+const secondPlayer = new Player(player2.value, "O", false, 0)
 
-const firstPlayer = new Player(player1.value, "X", true)
-const secondPlayer = new Player(player2.value, "O", false)
 
 // first page
 
@@ -75,12 +78,17 @@ function welcomePage() {
     welcome.classList.add('hide') // when we start
 }
 
-console.log(player1, player2)
-// gameContainer.classList.add('hide')
+// console.log(player1, player2)
+// // gameContainer.classList.add('hide')
+
+
+
 function inputValue() {
 
     if (player1.value !== '' && player2.value !== '') {
-    
+        firstPlayer.name = player1.value
+        secondPlayer.name = player2.value
+
         player.style.display = 'none'
         gameContainer.classList.remove('hide') // to add it back when we start the game
         nameDisplay.innerText = `Welcome to my Tic-Tac-Toe Player ${player1.value.toUpperCase()} and Player ${player2.value.toUpperCase()}`
@@ -92,13 +100,10 @@ function inputValue() {
     } else {
         alert("Please player 1 add your name")
     }
-
-    // console.log(player1 , player2, 'input')
-    //  nameDisplay.value = player1.textContent
-
 }
 
 
+// tryButton.addEventListener("click", startGame)
 
 
 // The following code limits the amount of time we can click inside one cell
@@ -106,7 +111,10 @@ startGame()
 function startGame() {
     cells.forEach(cell => {
         cell.addEventListener('click', takeTurn, { once: true })
+
     })
+    // takeTurn()
+    // winImage.classList.add('hide')
 
 }
 
@@ -143,11 +151,11 @@ function takeTurn(evt) {
         }
         console.log(options)
         winner()
-        draw()
+      draw()
     }
 }
 
-// draw()
+
 // This will allow us to take turn between first player and second player
 function changePlayer() {
 
@@ -165,6 +173,7 @@ function changePlayer() {
 
 // console.log(cells[0].innerText)
 
+
 function winner() {
 
     for (const combo of win) {
@@ -173,38 +182,89 @@ function winner() {
         // console.log(options)
         if (options[a] === firstPlayer.value && options[b] === firstPlayer.value && options[c] === firstPlayer.value) {
             console.log(`${firstPlayer.name} Win`)
-            // break;
+            gameStatus.classList.remove('hide');
+            winMessage.textContent = `Congratulation ${firstPlayer.name} wins!`
+            cellContainer.style.display = "none"
+            winImage.classList.remove('hide')
+            tieImage.classList.add("hide")
+            firstPlayer.score +=10
+            firstPlayerScore.innerHTML = `${firstPlayer.name} : ${firstPlayer.score}`
+            gameOver = true
 
 
         } else if (options[a] === secondPlayer.value && options[b] === secondPlayer.value && options[c] === secondPlayer.value) {
             console.log(`${secondPlayer.name} win!!!!`)
+            gameStatus.classList.remove('hide')
+            winMessage.textContent = `Congratulation ${secondPlayer.name} wins!`
+            cellContainer.style.display = 'none'
+            winImage.classList.remove("hide")
+            tieImage.classList.add("hide")
+            secondPlayer.score +=10
+            secondPlayerScore.innerHTML = `${secondPlayer.name}: ${secondPlayer.score}`
             // break;
+            gameOver = true
+        } else {
+            gameOver = false
+           
         }
-        else {
-            // continue
-            // draw()
-        }
+
     }
+   
 }
 
-tryAgain()
-tryButton.addEventListener("click", tryAgain())
+// tryAgain()
+
 
 function tryAgain() {
+    // console.log(cellContainer.childNodes)
+    for (let i = 0; i < cellContainer.childNodes.length; i++) {
+        if (i % 2 !== 0) {
+            cellContainer.childNodes[i].innerText = ""
+            console.log(cellContainer.childNodes[i].style.backgroundColor)
+            cellContainer.childNodes[i].style.backgroundColor = ""
+            // cellContainer.childNodes[i].style.border = "black"
+            console.log(cellContainer.childNodes[i].style.border)
+            console.log(cellContainer.style.border)
+        }
+    
+        winMessage.textContent = ''
+        cellContainer.childNodes.forEach(cell => {
+            cell.addEventListener('click', takeTurn, { once: true })
+        })
 
-    cells.forEach(cell => {
-        cell.innerText = ""
-    })
+        console.log(cellContainer)
+    }
+
+    if (!winImage.classList.contains("hide")) {
+        winImage.classList.add("hide")
+    } 
+     if (!tieImage.classList.contains('hide')) {
+        tieImage.classList.add("hide")
+    }
+
+    cellContainer.style.display = "block"
+
+    cellContainer.style.display = "grid"
+    for (let i = 0; i < options.length; i++) {
+
+        options[i] = ""
+        console.log(options)
+    }
 }
 
 
 // Draw function
 function draw() {
-    const checkValue = (currentValue) => currentValue == 'X' || currentValue == 'O';
+   
+    if(gameOver === false){
+        const checkValue = (currentValue) => currentValue == 'X' || currentValue == 'O';
 
-    if (options.every(checkValue)) {
+        if (options.every(checkValue)) {
+            gameOver = true
     
-            console.log("we got a draw")
+            cellContainer.style.display = 'none'
+            tieImage.classList.remove('hide')
+        }
     }
 }
 
@@ -215,20 +275,3 @@ restartButton.addEventListener('click', (evt) => {
     window.location.reload()
 })
 
-//  ========= Player =========
-
-
-// // first page
-// welcome.classList.remove('hide') // when we start
-// player.style.display = 'none'
-// gameContainer.classList.add('hide')
-
-
-// // The input page
-// welcome.classList.add('hide')// to hide it (when the player is filling out their name)
-// player.style.display = 'flex'
-
-
-// //The Game page
-// player.style.display = "none"
-// gameContainer.classList.remove('hide') // to add it back when we start the game

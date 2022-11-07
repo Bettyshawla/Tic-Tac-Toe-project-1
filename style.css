@@ -43,18 +43,16 @@ h1 {
     margin: auto;
 }
 
-#gameStatus {
-    font-size: 30px;
-}
+
 
 .hide {
-    display: none;
+    display: none; 
     font-size: larger;
     margin-left: 30px;
 }
 
 h4 {
-    color: aliceblue;
+    color: rgb(1, 5, 9);
     text-align: justify;
 }
 
@@ -112,7 +110,7 @@ input {
    
     width: 30vw;
     height: 25vh;
-    /* display: none; */
+   
 }
 
 #name-display{
@@ -120,22 +118,7 @@ input {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* #squid{
-    width: 10in;
-    height: 5in;
-}
-#squid-winnig{
-width: 120%;
-height: 100%;
-/* }
-#spongebob-winning{
-    width: 10%;
-    height: 10%;
-    /* display: none; */
-/*  */
-/* #spongebob{ */
 
-/* } */
 #welcome-image {
     background-image: url(./edited/f1.jpg);
     width: 150vw;
@@ -155,3 +138,23 @@ height: 100%;
     padding: 5px;
     margin-bottom: 20%;
 }
+
+
+#gameStatus {
+    font-size: 30px;
+
+}
+.reset-style{
+    all: revert;
+}
+
+#score-display{
+    display: flex; 
+    position: absolute;
+    flex-direction:column;
+    color:rgb(12, 12, 12);
+    text-align: justify;
+    margin-bottom: 10px;
+   
+}
+
