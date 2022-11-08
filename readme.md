@@ -29,11 +29,13 @@ I created a class for the two players that will be playing the game. Throughout 
 
 However; i wasn't able to solve the automated assignment of values on time.
 
+ ![](./edited/tic-giphy.gif)
+ 
 
 ## How to play the game 
 Click the link below to play the game ...
 *LINK*
- ![](./edited/tic-giphy.gif)
+
 
 ![](./edited/spongebob.gif)
 
