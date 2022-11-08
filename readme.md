@@ -16,7 +16,7 @@ Here is a link to a YouTube video that states the rule of the game in detail. ht
 ![](./edited/Tic-giphy.gif)
 
 
-#How did i develop this game?
+# How did i develop this game?
 
 
 # Special thank you to ...
