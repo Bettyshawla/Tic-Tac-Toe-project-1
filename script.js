@@ -267,6 +267,10 @@ function draw() {
             cellContainer.style.display = 'none'
             tieImage.classList.remove('hide')
         }
+        if(options.every(checkValue)){
+        gameOver = false
+        winner()
+        }
     }
 }
 
