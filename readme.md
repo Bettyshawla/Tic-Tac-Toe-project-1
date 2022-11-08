@@ -53,7 +53,7 @@ Click the link below to play the game ...
 *LINK*
 
 
-![](./edited/spongebob.gif)
+
 
 # Special thank you to ...
  1. Google.com
@@ -66,3 +66,4 @@ Click the link below to play the game ...
 
  
 ![](./edited/thank-you-for-your-help-cartman.gif)
+![](./edited/spongebob.gif)
