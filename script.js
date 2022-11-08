@@ -36,6 +36,7 @@ const tieImage = document.getElementById('tie')
 //score
 let firstPlayerScore = document.getElementById("score1")
 let secondPlayerScore = document.getElementById("score2")
+const totalScore = document.getElementById("total")
 
 //Winning condition is only when this are met
 const win = [
@@ -130,7 +131,7 @@ function takeTurn(evt) {
             cells.innerText = firstPlayer.value;
             cells.style.backgroundColor = "black"
             cells.style.color = 'white'
-            console.log()
+            
             changePlayer()
         } else if (secondPlayer.active === true) {
             cells.innerText = secondPlayer.value
@@ -187,6 +188,7 @@ function winner() {
             cellContainer.style.display = "none"
             winImage.classList.remove('hide')
             tieImage.classList.add("hide")
+            totalScore.classList.remove('hide')
             firstPlayer.score +=10
             firstPlayerScore.innerHTML = `${firstPlayer.name} : ${firstPlayer.score}`
             gameOver = true
@@ -199,13 +201,13 @@ function winner() {
             cellContainer.style.display = 'none'
             winImage.classList.remove("hide")
             tieImage.classList.add("hide")
+            totalScore.classList.remove('hide')
             secondPlayer.score +=10
             secondPlayerScore.innerHTML = `${secondPlayer.name}: ${secondPlayer.score}`
             // break;
             gameOver = true
         } else {
             gameOver = false
-           
         }
 
     }

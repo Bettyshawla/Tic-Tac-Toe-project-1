@@ -17,12 +17,12 @@ h1 {
 }
 
 #cell {
-    border: 3px double rgb(41, 41, 41);
+    border: solid 3px rgb(41, 41, 41);
     cursor: pointer;
     color: black;
     width: 200px;
     height: 180px;
-    box-shadow: 0 0 0 3px;
+    /* box-shadow: 0 0 0 3px; */
     font-size: 70px;
 
 }
@@ -144,17 +144,19 @@ input {
     font-size: 30px;
 
 }
-.reset-style{
-    all: revert;
-}
 
 #score-display{
     display: flex; 
     position: absolute;
     flex-direction:column;
     color:rgb(12, 12, 12);
-    text-align: justify;
-    margin-bottom: 10px;
+    /* text-align: justify; */
+    /* margin-bottom: 10px; */
    
 }
 
+#total{
+    /* text-decoration: underline;  */
+    font-weight: bolder; 
+    font-size: larger;
+}
