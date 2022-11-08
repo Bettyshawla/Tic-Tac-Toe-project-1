@@ -17,7 +17,10 @@ Here is a link to a YouTube video that states the rule of the game in detail. ht
 
 
 # How did i develop this game?
+Before i started working a project i spent a day researching and brainstorming ideas. 
 
+
+![](./edited/spongebob.gif)
 
 # Special thank you to ...
  1. Google.com
