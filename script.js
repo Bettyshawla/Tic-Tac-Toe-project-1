@@ -13,7 +13,7 @@ const tryButton = document.getElementById("try-again")
 // Enter button
 let enterButton = document.getElementById("Enter")
 
-
+// ---- PLAYER ----
 let player = document.getElementById('player'); //input div
 // First player
 const player1 = document.querySelector(".p1"); //input for player 1
@@ -26,14 +26,14 @@ let welcome = document.getElementById('welcome-image')
 // Setting the game 
 let gameOver = false
 
-//status
+// ---- STATUS ----
 const winMessage = document.getElementById("win-draw")
 // win-image
 const winImage = document.getElementById('win-pic')
 // tie-pic
 const tieImage = document.getElementById('tie')
 
-//score
+// ---- SCORE ----
 let firstPlayerScore = document.getElementById("score1")
 let secondPlayerScore = document.getElementById("score2")
 const totalScore = document.getElementById("total")
@@ -79,10 +79,6 @@ function welcomePage() {
     welcome.classList.add('hide') // when we start
 }
 
-// console.log(player1, player2)
-// // gameContainer.classList.add('hide')
-
-
 
 function inputValue() {
 
@@ -104,25 +100,19 @@ function inputValue() {
 }
 
 
-// tryButton.addEventListener("click", startGame)
 
-
-// The following code limits the amount of time we can click inside one cell
 startGame()
 function startGame() {
     cells.forEach(cell => {
         cell.addEventListener('click', takeTurn, { once: true })
 
     })
-    // takeTurn()
-    // winImage.classList.add('hide')
+
 
 }
 
 
 
-//This foreach function lets us know that we are clicking inside the cells
-//It adds the X and O when clicked in the cells
 function takeTurn(evt) {
 
     if (cells = evt.target) {
@@ -131,7 +121,7 @@ function takeTurn(evt) {
             cells.innerText = firstPlayer.value;
             cells.style.backgroundColor = "black"
             cells.style.color = 'white'
-            
+
             changePlayer()
         } else if (secondPlayer.active === true) {
             cells.innerText = secondPlayer.value
@@ -152,7 +142,7 @@ function takeTurn(evt) {
         }
         console.log(options)
         winner()
-      draw()
+        draw()
     }
 }
 
@@ -189,7 +179,7 @@ function winner() {
             winImage.classList.remove('hide')
             tieImage.classList.add("hide")
             totalScore.classList.remove('hide')
-            firstPlayer.score +=10
+            firstPlayer.score += 10
             firstPlayerScore.innerHTML = `${firstPlayer.name} : ${firstPlayer.score}`
             gameOver = true
 
@@ -202,7 +192,7 @@ function winner() {
             winImage.classList.remove("hide")
             tieImage.classList.add("hide")
             totalScore.classList.remove('hide')
-            secondPlayer.score +=10
+            secondPlayer.score += 10
             secondPlayerScore.innerHTML = `${secondPlayer.name}: ${secondPlayer.score}`
             // break;
             gameOver = true
@@ -211,14 +201,13 @@ function winner() {
         }
 
     }
-   
+
 }
 
-// tryAgain()
-
+console.log(cellContainer.childNodes)
 
 function tryAgain() {
-    // console.log(cellContainer.childNodes)
+    
     for (let i = 0; i < cellContainer.childNodes.length; i++) {
         if (i % 2 !== 0) {
             cellContainer.childNodes[i].innerText = ""
@@ -227,8 +216,9 @@ function tryAgain() {
             // cellContainer.childNodes[i].style.border = "black"
             console.log(cellContainer.childNodes[i].style.border)
             console.log(cellContainer.style.border)
+            console.log(cellContainer.childNodes[i])
         }
-    
+
         winMessage.textContent = ''
         cellContainer.childNodes.forEach(cell => {
             cell.addEventListener('click', takeTurn, { once: true })
@@ -239,8 +229,8 @@ function tryAgain() {
 
     if (!winImage.classList.contains("hide")) {
         winImage.classList.add("hide")
-    } 
-     if (!tieImage.classList.contains('hide')) {
+    }
+    if (!tieImage.classList.contains('hide')) {
         tieImage.classList.add("hide")
     }
 
@@ -257,19 +247,19 @@ function tryAgain() {
 
 // Draw function
 function draw() {
-   
-    if(gameOver === false){
+
+    if (gameOver === false) {
         const checkValue = (currentValue) => currentValue == 'X' || currentValue == 'O';
 
         if (options.every(checkValue)) {
             gameOver = true
-    
+
             cellContainer.style.display = 'none'
             tieImage.classList.remove('hide')
         }
-        if(options.every(checkValue)){
-        gameOver = false
-        winner()
+        if (options.every(checkValue)) {
+            gameOver = false
+            winner()
         }
     }
 }
@@ -280,4 +270,5 @@ function draw() {
 restartButton.addEventListener('click', (evt) => {
     window.location.reload()
 })
+
 
