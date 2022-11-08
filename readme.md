@@ -22,15 +22,31 @@ Before i started working a project i spent a day researching and brainstorming i
 After i created the basic HTML file with specific Id and Class then i started calling DOM elements on my JavaScript file.
 
 
-Once all the necessary variables are created, i started working on their functions and inspecting if my script is working.
-
-
 I created a class for the two players that will be playing the game. Throughout the game i ended up developing multiple functions for the game. 
+
+
+Once all the necessary variables are created, i started working on their functions and inspecting my script to make sure itt is working properly.
 
 However; i wasn't able to solve the automated assignment of values on time.
 
+
+## Instruction
+1. Click anywhere on the screen
+
+2. Enter players name
+
+3. When you click enter it will direct you to the game. 
+
+4. You have the option to Restart the entire game / reset players by clicking 'Restart' button.
+The other option is the 'Try Again' button which will let you restart just the game.
+
+5. Throughout the game the score log will keep record of the players score.
+
+
+
+
  ![](./edited/tic-giphy.gif)
- 
+
 
 ## How to play the game 
 Click the link below to play the game ...
