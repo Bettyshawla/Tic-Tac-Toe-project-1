@@ -13,7 +13,7 @@ In order to win the player need to get 3 "X's" or "O's" in a row. The player can
 
 Here is a link to a YouTube video that states the rule of the game in detail. https://youtu.be/5SdW0_wTX5c
 
-![](./edited/Tic-giphy.gif)
+![](./edited/tic-giphy.gif)
 
 
 # How did i develop this game?
