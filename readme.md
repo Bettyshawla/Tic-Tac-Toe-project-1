@@ -50,7 +50,7 @@ The other option is the 'Try Again' button which will let you restart just the g
 
 ## How to play the game 
 Click the link below to play the game ...
-*LINK*
+https://bettyshawla.github.io/Tic-Tac-Toe-project-1/
 
 
 
