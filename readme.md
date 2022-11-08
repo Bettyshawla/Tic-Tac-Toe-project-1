@@ -18,6 +18,9 @@ Here is a link to a YouTube video that states the rule of the game in detail. ht
 
 # How did i develop this game?
 Before i started working a project i spent a day researching and brainstorming ideas. 
+After i created the basic HTML file with specific Id and Class then i started calling DOM elements on my JavaScript file.
+
+once all the necessary variables are created, i started working on their functions and inspecting if my script is working.
 
 
 ![](./edited/spongebob.gif)
