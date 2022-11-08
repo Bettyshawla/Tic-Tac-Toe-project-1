@@ -66,4 +66,3 @@ Click the link below to play the game ...
 
  
 ![](./edited/thank-you-for-your-help-cartman.gif)
-![](./edited/spongebob.gif)
